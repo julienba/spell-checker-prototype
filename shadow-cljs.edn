@@ -1,0 +1,19 @@
+{:source-paths ["src/cljs" "src/cljc"]
+
+ :dependencies [[re-frame/re-frame "1.4.3"]
+                [com.pitch/uix.core "1.4.8"]
+                [com.pitch/uix.dom "1.4.8"]
+                [superstructor/re-frame-fetch-fx "0.4.0"]]
+
+ :dev-http {8080 "resources/public"}
+
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "resources/public/js"
+   :asset-path "/js"
+   :modules {:main {:init-fn spell-checker.core/init}}
+   :devtools {:after-load spell-checker.core/reload
+              :http-root "resources/public"
+              :http-port 8080}}}}
+

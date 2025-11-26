@@ -1,0 +1,34 @@
+---
+model: googleai/gemini-2.5-flash
+input:
+  schema:
+    text: string
+comment: Does not use the slide context or the company context
+---
+
+Here are a few ways to improve your prompt to ensure higher accuracy, better handling of edge cases (like punctuation), and strict adherence to the JSON format.
+
+### Option 1: The Robust & Strict Version (Recommended)
+
+This version adds constraints to prevent the AI from changing the author's style or tone, focusing strictly on objective errors. It also clarifies exactly how the output should look.
+
+**Role:** You are a professional copy editor for a high-stakes business presentation.
+
+**Task:** Proofread the provided text strictly for **spelling, grammar, and punctuation errors**. Do not alter the style, tone, or vocabulary unless it is grammatically incorrect.
+
+**Output Format:**
+Return the full text including the corrections. However, every time you make a correction, replace the original erroneous text with a JSON object using the format `{"origin": "original_text", "sugg": "suggestion"}`.
+
+**Rules:**
+
+1.  Keep correct text exactly as it is.
+2.  If a phrase is grammatically incorrect, enclose the whole phrase in the "origin" field.
+3.  Ensure the JSON is valid and properly escaped.
+4.  Do not add conversational filler; output only the processed text.
+
+**Example:**
+*Input:* Their is a problem with the data.
+*Output:* `{"origin": "Their", "sugg": "There"}` is a problem with the data.
+
+**Input Text:**
+{{text}}

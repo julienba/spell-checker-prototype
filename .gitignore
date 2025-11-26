@@ -1,0 +1,39 @@
+# Clojure
+target/
+.cpcache/
+.nrepl-port
+.nrepl-history
+.lein-*
+.portal
+.lsp
+log
+logs
+.class
+.clj-kondo/*
+!.clj-kondo/config.edn
+
+
+# Shadow-CLJS
+.shadow-cljs/
+node_modules/
+package-lock.json
+
+# Compiled assets
+resources/public/js/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.calva
+
+# AI
+.clojure-mcp/scratch_pad.edn
+
+# OS
+.DS_Store
+Thumbs.db
+
