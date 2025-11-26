@@ -56,7 +56,7 @@ The general idea is to not use the LLM to prevent latency for "regular" spell ch
 
 The debounce value needs to be experimented with. When a slide is changed and when the slide notes are changed.
 
-### The return format
+### The LLM output format
 
 I decided to return the entire text interleaved with the corrections.
 This format offers the advantage of being:
