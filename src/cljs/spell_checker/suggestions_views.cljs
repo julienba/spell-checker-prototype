@@ -69,7 +69,6 @@
         display-suggestion? (and suggestion
                                  (= "ok" (:status suggestion))
                                  (pos-int? suggestion-cnt))]
-    (prn ::suggestion suggestion)
     (when-not (nil? suggestion)
       ($ :div {:style {:margin-top "1.5rem"
                        :padding "1rem"
